@@ -152,7 +152,7 @@ input:checked + .toggle-slider:before {
 
 @media (max-width: 2583px) {
     .container {
-        height: 100vh;
+        height: auto;
     }
     h1 {
         font-size: 3.5rem;
