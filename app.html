@@ -1,0 +1,191 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price Plan Switcher</title>
+</head>
+<body>
+
+  <h2>Price Plans</h2>
+  <label>Toggle Plan:</label>
+  <button id="toggleButton" onclick="togglePlan()">Toggle</button>
+
+  <p id="priceDisplay">Price: $10/month</p>
+
+  <script>
+    var isMonthly = true;
+
+    function togglePlan() {
+      isMonthly = !isMonthly;
+      updatePrice();
+    }
+
+    function updatePrice() {
+      var priceDisplay = document.getElementById("priceDisplay");
+
+      // Set prices based on the selected plan
+      var monthlyPrice = 10;
+      var annualPrice = 100; // Discounted annual price
+
+      if (isMonthly) {
+        priceDisplay.textContent = "Price: $" + monthlyPrice + "/month";
+      } else {
+        priceDisplay.textContent = "Price: $" + annualPrice + "/year";
+      }
+    }
+  </script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Switch</title>
+  <style>
+    /* Style for the toggle switch */
+    .toggle-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .toggle-label {
+      margin-right: 10px;
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .toggle-slider {
+      background-color: #2196F3;
+    }
+
+    input:focus + .toggle-slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .toggle-slider:before {
+      transform: translateX(26px);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Toggle Switch Example</h2>
+  
+  <div class="toggle-container">
+    <label class="toggle-label">Toggle:</label>
+    <label class="toggle-switch">
+      <input type="checkbox" onchange="toggleSwitch()" id="myToggle">
+      <span class="toggle-slider"></span>
+    </label>
+  </div>
+
+  <script>
+    function toggleSwitch() {
+      var toggle = document.getElementById("myToggle");
+      console.log("Toggle is now " + (toggle.checked ? "on" : "off"));
+    }
+  </script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price Toggle</title>
+  <style>
+    /* Add your styles for pricing elements and switch here */
+  </style>
+</head>
+<body>
+
+  <div>
+    <h2>Product 1</h2>
+    <p id="product1-price"></p>
+  </div>
+
+  <div>
+    <h2>Product 2</h2>
+    <p id="product2-price"></p>
+  </div>
+
+  <div>
+    <h2>Product 3</h2>
+    <p id="product3-price"></p>
+  </div>
+
+  <label for="toggleSwitch">Toggle Monthly/Annual</label>
+  <input type="checkbox" id="toggleSwitch" onchange="togglePrices()">
+
+  <script>
+    // Define your prices for monthly and annual plans
+    const product1MonthlyPrice = 10;
+    const product1AnnualPrice = 100;
+
+    const product2MonthlyPrice = 15;
+    const product2AnnualPrice = 150;
+
+    const product3MonthlyPrice = 20;
+    const product3AnnualPrice = 200;
+
+    function togglePrices() {
+      const toggleSwitch = document.getElementById('toggleSwitch');
+
+      const product1PriceElement = document.getElementById('product1-price');
+      const product2PriceElement = document.getElementById('product2-price');
+      const product3PriceElement = document.getElementById('product3-price');
+
+      if (toggleSwitch.checked) {
+        // Show annual prices
+        product1PriceElement.textContent = `Annual Price: $${product1AnnualPrice}`;
+        product2PriceElement.textContent = `Annual Price: $${product2AnnualPrice}`;
+        product3PriceElement.textContent = `Annual Price: $${product3AnnualPrice}`;
+      } else {
+        // Show monthly prices
+        product1PriceElement.textContent = `Monthly Price: $${product1MonthlyPrice}`;
+        product2PriceElement.textContent = `Monthly Price: $${product2MonthlyPrice}`;
+        product3PriceElement.textContent = `Monthly Price: $${product3MonthlyPrice}`;
+      }
+    }
+
+    // Initialize prices on page load
+    togglePrices();
+  </script>
+
+</body>
+</html>
